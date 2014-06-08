@@ -49,54 +49,37 @@
         <Filename Value="sr.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="sr"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="54" Y="7"/>
-        <UsageCount Value="58"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="fontes\rest\rest.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="rest"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="0"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="107"/>
-        <CursorPos X="43" Y="4"/>
-        <UsageCount Value="58"/>
-        <Bookmarks Count="1">
-          <Item0 X="1" Y="34" ID="0"/>
-        </Bookmarks>
-        <Loaded Value="True"/>
+        <UsageCount Value="20"/>
       </Unit1>
       <Unit2>
         <Filename Value="fontes\brokers.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Brokers"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="3" Y="10"/>
-        <UsageCount Value="58"/>
+        <UsageCount Value="20"/>
       </Unit2>
       <Unit3>
         <Filename Value="fontes\dbutils.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="dbutils"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="4"/>
-        <CursorPos X="52" Y="8"/>
-        <UsageCount Value="58"/>
+        <UsageCount Value="20"/>
       </Unit3>
       <Unit4>
         <Filename Value="fontes\nas\nas.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="nas"/>
-        <EditorIndex Value="1"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="31" Y="2"/>
-        <UsageCount Value="58"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="20"/>
       </Unit4>
     </Units>
   </ProjectOptions>
@@ -111,6 +94,11 @@
       <OtherUnitFiles Value="fontes;fontes\nas;fontes\rest"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
+    <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf2Set"/>
+      </Debugging>
+    </Linking>
     <Other>
       <CompilerMessages>
         <MsgFileName Value=""/>
