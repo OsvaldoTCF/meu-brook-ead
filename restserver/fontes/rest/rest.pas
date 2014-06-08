@@ -5,7 +5,7 @@ unit rest;
 interface
 
 uses
-  BrookAction, nas, rutils, fpjson, classes;
+  BrookAction, nas, rutils, fpjson, classes, sysutils;
 
 type
 
@@ -59,16 +59,16 @@ var
 begin
   if Values.Values['id'] <> '' then
   begin
-  //FOpf.Entity.Id := StrToIntDef(Values.Values['id'],0);
-  //FOpf.Get;
-  //with TJSONObject.Create do
-  //  try
-  //    Add('id',FOpf.Entity.Id);
-  //    Add('shortname',FOpf.Entity.ShortName);
-  //    Write(AsJSON);
-  //  finally
-  //    Free;
-  //  end;
+    FOpf.Entity.Id := StrToIntDef(Values.Values['id'], 0);
+    FOpf.Get;
+    with TJSONObject.Create do
+    try
+      Add('id',FOpf.Entity.Id);
+      Add('shortname',FOpf.Entity.ShortName);
+      Write(AsJSON);
+    finally
+      Free;
+    end;
   end
   else
   begin
