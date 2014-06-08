@@ -51,7 +51,7 @@ type
 
   { TNasOpf }
 
-  TNasOpf = class(specialize TdGSQLdbOpf<TNas>)
+  TNasOpf = class(specialize TdGSQLdbEntityOpf<TNas>)
   public
     constructor Create; overload;
   end;
