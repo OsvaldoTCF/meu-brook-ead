@@ -1,0 +1,134 @@
+object frmMain: TfrmMain
+  Left = 533
+  Height = 201
+  Top = 217
+  Width = 320
+  Caption = 'Cliente RESTful'
+  ClientHeight = 201
+  ClientWidth = 320
+  Color = 15790578
+  LCLVersion = '1.2.2.0'
+  object btGet: TButton
+    Left = 8
+    Height = 25
+    Top = 8
+    Width = 75
+    Caption = 'GET'
+    OnClick = btGetClick
+    TabOrder = 0
+  end
+  object btPost: TButton
+    Left = 8
+    Height = 25
+    Top = 40
+    Width = 75
+    Caption = 'POST'
+    OnClick = btPostClick
+    TabOrder = 1
+  end
+  object btPut: TButton
+    Left = 8
+    Height = 25
+    Top = 72
+    Width = 75
+    Caption = 'PUT'
+    OnClick = btPutClick
+    TabOrder = 2
+  end
+  object btDelete: TButton
+    Left = 8
+    Height = 25
+    Top = 104
+    Width = 75
+    Caption = 'DELETE'
+    OnClick = btDeleteClick
+    TabOrder = 3
+  end
+  object btOption: TButton
+    Left = 8
+    Height = 25
+    Top = 136
+    Width = 75
+    Caption = 'OPTION'
+    OnClick = btOptionClick
+    TabOrder = 4
+  end
+  object edUri: TEdit
+    Left = 136
+    Height = 27
+    Top = 71
+    Width = 170
+    AutoSize = False
+    TabOrder = 5
+    Text = '/nas'
+  end
+  object Label1: TLabel
+    Left = 138
+    Height = 17
+    Top = 56
+    Width = 23
+    Caption = 'URI'
+    ParentColor = False
+  end
+  object edDado: TEdit
+    Left = 136
+    Height = 27
+    Top = 118
+    Width = 170
+    AutoSize = False
+    TabOrder = 6
+    Text = 'shortname=Osvaldo'
+  end
+  object Label2: TLabel
+    Left = 138
+    Height = 17
+    Top = 103
+    Width = 36
+    Caption = 'Dado'
+    ParentColor = False
+  end
+  object edEncUri: TEdit
+    Left = 136
+    Height = 27
+    Top = 166
+    Width = 170
+    AutoSize = False
+    Color = 14803428
+    ReadOnly = True
+    TabOrder = 7
+  end
+  object Label3: TLabel
+    Left = 138
+    Height = 17
+    Top = 151
+    Width = 84
+    Caption = 'Encoded URI'
+    ParentColor = False
+  end
+  object btSearch: TButton
+    Left = 8
+    Height = 25
+    Top = 168
+    Width = 75
+    Caption = 'SEARCH'
+    OnClick = btSearchClick
+    TabOrder = 8
+  end
+  object edUrl: TEdit
+    Left = 136
+    Height = 27
+    Top = 23
+    Width = 170
+    AutoSize = False
+    TabOrder = 9
+    Text = 'http://localhost:2000'
+  end
+  object Label4: TLabel
+    Left = 138
+    Height = 17
+    Top = 8
+    Width = 27
+    Caption = 'URL'
+    ParentColor = False
+  end
+end
