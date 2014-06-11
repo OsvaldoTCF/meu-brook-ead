@@ -5,7 +5,7 @@ unit rest;
 interface
 
 uses
-  BrookAction, nas, rutils, fpjson, classes, sysutils;
+  BrookAction, nas, rutils, fpjson, classes, sysutils, BrookUtils;
 
 type
 
@@ -29,12 +29,7 @@ type
 
 implementation
 
-{ TRadIpPoolAction }
-
-
-/////////////////////// NAS
-
-{ TPersonRESTAction }
+{ TNasAction }
 
 constructor TNasAction.Create;
 begin
@@ -65,6 +60,7 @@ begin
     try
       Add('id',FOpf.Entity.Id);
       Add('shortname',FOpf.Entity.ShortName);
+      Add('type',FOpf.Entity.&type);
       Write(AsJSON);
     finally
       Free;
@@ -92,15 +88,11 @@ begin
           ts.Free;
           VJArray.Free;
         end;
-
-
   end;
-
 end;
 
 procedure TNasAction.Post;
 begin
-
   Entity.Validate;
   FOpf.Add(Entity);
   FOpf.Apply;
@@ -108,6 +100,11 @@ end;
 
 procedure TNasAction.Put;
 begin
+  with Entity do
+  begin
+  id := StrToIntDef(Values.Values['id'], 0);
+  shortname := Fields.Values['shortname'];
+  end;
   Entity.Validate;
   FOpf.Modify(Entity);
   FOpf.Apply;
@@ -115,6 +112,7 @@ end;
 
 procedure TNasAction.Delete;
 begin
+  Entity.Id := StrToIntDef(Values.Values['id'], 0);
   FOpf.Remove(Entity);
   FOpf.Apply;
 end;
@@ -122,5 +120,4 @@ end;
 initialization
   TNasAction.Register('/nas');
   TNasAction.Register('/nas/:id');
-
 end.

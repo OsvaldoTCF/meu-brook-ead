@@ -27,7 +27,7 @@ type
     FId: Int64;
     //FNasName: string;
     FShortName: string;
-    //FType: string;
+    FType: string;
     //FPorts: integer;
     //FSecret: string;
     //FServer: string;
@@ -40,7 +40,7 @@ type
     property Id: Int64 read FId write FId;
     //property NasName: string read FNasName write FNasName;
     property ShortName: string read FShortName write FShortName;
-    //property &Type: string read FType write FType;
+    property &Type: string read FType write FType;
     //property Ports: integer read Fports write FPorts;
     //property Secret:string read FSecret write FSecret;
     //property Server: string read FServer write FServer;
@@ -65,6 +65,8 @@ procedure TNas.Validate;
 begin
   if Trim(FShortName) = '' then
     raise ENas.Create('Field "ShortName" must not be empty.');
+  if Trim(FType) = '' then
+    raise ENas.Create('Field "Type" must not be empty.');
 end;
 
 { TNasOpf }

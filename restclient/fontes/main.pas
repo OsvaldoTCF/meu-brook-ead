@@ -5,7 +5,7 @@ unit main;
 interface
 
 uses
-  Classes, SysUtils, Forms, Dialogs, StdCtrls;
+  Classes, SysUtils, Forms, Dialogs, StdCtrls, rutils, fpjson;
 
 type
 
@@ -18,14 +18,16 @@ type
     btDelete: TButton;
     btOption: TButton;
     btSearch: TButton;
+    edDado2: TEdit;
     edUri: TEdit;
-    edDado: TEdit;
+    edDado1: TEdit;
     edEncUri: TEdit;
     edUrl: TEdit;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
+    Label5: TLabel;
     procedure btGetClick(Sender: TObject);
     procedure btPostClick(Sender: TObject);
     procedure btPutClick(Sender: TObject);
@@ -38,8 +40,6 @@ type
     { public declarations }
   end;
 
-//const
-//  ROOT_URL = 'http://localhost:2000';
 
 var
   frmMain: TfrmMain;
@@ -71,19 +71,6 @@ begin
 end;
 
 procedure TfrmMain.btPostClick(Sender: TObject);
-//var
-//  st: TStringStream;
-//  http: TBrookHttpClient;
-//begin
-//  http := TBrookHttpClient.Create('fclweb');
-//  st := TStringStream.Create('');
-//  try
-//    http.Post(edUrl.Text, st);
-//    ShowMessage(st.DataString);
-//  finally
-//    st.Free;
-//    http.Free;
-//  end;
 var
   nome, form, s: string;
   st: TStringStream;
@@ -93,7 +80,7 @@ begin
   http := TBrookHttpClient.Create('fclweb');
   st := TStringStream.Create('');
   try
-    edEncUri.Text := HTTPEncode(edDado.Text);
+    edEncUri.Text := HTTPEncode(edDado1.Text);
     form := edEncUri.Text;
     http.PostForm(edUrl.Text+edUri.Text, form, st);
     s := StringReplace(st.DataString, '<br />', LineEnding, [rfReplaceAll]);
@@ -106,14 +93,26 @@ end;
 
 procedure TfrmMain.btPutClick(Sender: TObject);
 var
+  s, d1, d2: string;
   st: TStringStream;
   http: TBrookHttpClient;
 begin
   http := TBrookHttpClient.Create('fclweb');
   st := TStringStream.Create('');
+  d1 := HTTPEncode(edDado1.Text);
+  d2 := HTTPEncode(edDado2.Text);
+
   try
-    http.Put(edUrl.Text, st);
-    ShowMessage(st.DataString);
+    if (edDado1.Text='') and (edDado2.Text<>'') then
+    edEncUri.Text := d2
+    else
+    if (edDado2.Text='') and (edDado1.Text<>'') then
+    edEncUri.Text := d1
+    else
+    edEncUri.Text := d1+'&'+d2;
+    http.PutForm(edUrl.Text+edUri.Text, edEncUri.Text, st);
+    s := StringReplace(st.DataString, '<br />', LineEnding, [rfReplaceAll]);
+    ShowMessage(s);
   finally
     st.Free;
     http.Free;
@@ -128,7 +127,7 @@ begin
   http := TBrookHttpClient.Create('fclweb');
   st := TStringStream.Create('');
   try
-    http.Delete(edUrl.Text, st);
+    http.Delete(edUrl.Text+edUri.Text, st);
     ShowMessage(st.DataString);
   finally
     st.Free;

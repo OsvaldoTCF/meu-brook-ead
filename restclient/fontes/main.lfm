@@ -1,11 +1,11 @@
 object frmMain: TfrmMain
-  Left = 533
-  Height = 201
-  Top = 217
-  Width = 320
+  Left = 456
+  Height = 343
+  Top = 145
+  Width = 397
   Caption = 'Cliente RESTful'
-  ClientHeight = 201
-  ClientWidth = 320
+  ClientHeight = 343
+  ClientWidth = 397
   Color = 15790578
   LCLVersion = '1.2.2.0'
   object btGet: TButton
@@ -29,7 +29,7 @@ object frmMain: TfrmMain
   object btPut: TButton
     Left = 8
     Height = 25
-    Top = 72
+    Top = 208
     Width = 75
     Caption = 'PUT'
     OnClick = btPutClick
@@ -70,10 +70,10 @@ object frmMain: TfrmMain
     Caption = 'URI'
     ParentColor = False
   end
-  object edDado: TEdit
+  object edDado1: TEdit
     Left = 136
     Height = 27
-    Top = 118
+    Top = 223
     Width = 170
     AutoSize = False
     TabOrder = 6
@@ -82,15 +82,15 @@ object frmMain: TfrmMain
   object Label2: TLabel
     Left = 138
     Height = 17
-    Top = 103
-    Width = 36
-    Caption = 'Dado'
+    Top = 208
+    Width = 44
+    Caption = 'Dado1'
     ParentColor = False
   end
   object edEncUri: TEdit
     Left = 136
     Height = 27
-    Top = 166
+    Top = 134
     Width = 170
     AutoSize = False
     Color = 14803428
@@ -100,7 +100,7 @@ object frmMain: TfrmMain
   object Label3: TLabel
     Left = 138
     Height = 17
-    Top = 151
+    Top = 119
     Width = 84
     Caption = 'Encoded URI'
     ParentColor = False
@@ -108,7 +108,7 @@ object frmMain: TfrmMain
   object btSearch: TButton
     Left = 8
     Height = 25
-    Top = 168
+    Top = 72
     Width = 75
     Caption = 'SEARCH'
     OnClick = btSearchClick
@@ -129,6 +129,23 @@ object frmMain: TfrmMain
     Top = 8
     Width = 27
     Caption = 'URL'
+    ParentColor = False
+  end
+  object edDado2: TEdit
+    Left = 136
+    Height = 27
+    Top = 271
+    Width = 170
+    AutoSize = False
+    TabOrder = 10
+    Text = 'Type=Outro'
+  end
+  object Label5: TLabel
+    Left = 138
+    Height = 17
+    Top = 256
+    Width = 44
+    Caption = 'Dado2'
     ParentColor = False
   end
 end
